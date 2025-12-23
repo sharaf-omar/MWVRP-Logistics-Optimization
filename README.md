@@ -1,14 +1,28 @@
-## 👥 Team: CTRL ALT ELITE
+# Hybrid Metaheuristics for Multi-Warehouse Logistics Optimization
 
-**Developed by:**
+**Project for C-AI311 (Introduction to Artificial Intelligence) | Team CTRL ALT ELITE**
 
-*   **Omar Wafa** (23-101281)
-*   **Dania Hassan** (23-101147)
-*   **Omar Shafiy** (23-201356)
-*   **Omar Sharaf** (24-101236)
-*   **Eiad Essam** (23-101108)
-*   **Youssef Sayed** (23-101227)
-*   **Habiba Elzahaby** (23-101128)
+This repository contains an advanced optimization suite for solving the **Multi-Warehouse Vehicle Routing Problem (MWVRP)**. It combines classical heuristics with modern metaheuristics to maximize order fulfillment and minimize operational costs in a complex logistics environment.
+
+## 🚀 Key Features
+
+*   **Hybrid Solver Architecture:** Implements a layered pipeline:
+    1.  **Clarke-Wright Savings:** Deterministic initialization for rapid baseline solutions.
+    2.  **Ant Colony Optimization (ACO):** Probabilistic global search with adaptive parameters.
+    3.  **Local Search (2-opt):** Iterative refinement to untangle routes.
+    4.  **ALNS (Adaptive Large Neighborhood Search):** Diversification via destroy-and-repair operators.
+*   **Interactive Dashboard:** A professional GUI built with **Streamlit** to generate scenarios, visualize routes on live maps, and audit performance metrics.
+*   **Realistic Constraints:** Handles inventory balancing, heterogeneous vehicle fleets (Capacity/Volume), and road network connectivity.
+
+## 🛠️ Tech Stack
+*   **Language:** Python 3.10+
+*   **Environment:** Robin Logistics API
+*   **Visualization:** Streamlit, Folium, Graphviz
+*   **Algorithms:** ACO, ALNS, BFS, Dijkstra
+
+## 📦 How to Run
+1.  Install dependencies: `pip install -r requirements.txt`
+2.  Launch dashboard: `streamlit run ctrl_alt_elite_dashboard.py`
 
 Here is the comprehensive analysis of **Solver #1**.
 
@@ -286,5 +300,3 @@ We don't draw them as images. We write code that *describes* the graph using the
 *   **Nodes:** `g.node('A', 'Label')` creates a box.
 *   **Edges:** `g.edge('A', 'B')` draws an arrow from A to B.
 *   **Rendering:** The library calculates the best layout automatically so the arrows don't cross messily.
-
-# to run streamlit run ctrl_alt_elite_dashboard.py
