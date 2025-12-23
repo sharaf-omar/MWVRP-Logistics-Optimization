@@ -10,7 +10,7 @@
 *   **Youssef Sayed** (23-101227)
 *   **Habiba Elzahaby** (23-101128)
 
-Here is the comprehensive analysis of **Solver #1** for your project defense.
+Here is the comprehensive analysis of **Solver #1**.
 
 ### 1. High-Level Approach: "Seeded Swarm Intelligence"
 This solver utilizes a **Hybrid Metaheuristic** architecture. Instead of relying on a single technique, it layers three distinct phases to balance speed and solution quality:
@@ -70,7 +70,7 @@ This solver utilizes a **Hybrid Metaheuristic** architecture. Instead of relying
 *   **Concept:** Pure ACO often starts very slowly because ants wander randomly at first. By seeding the best solution with **Clarke-Wright**, the pheromone trails are initialized on "decent" paths immediately, saving computation time and allowing the ants to focus on refinement rather than basic discovery.
 
 
-Here is the comprehensive analysis of **Solver #2** for your project defense.
+Here is the comprehensive analysis of **Solver #2**.
 
 ### 1. High-Level Approach: "Pure Probabilistic Swarm"
 Unlike Solver #1 which used a hybrid approach, this solver implements a **Pure Ant Colony Optimization (ACO)** strategy without a deterministic initialization phase (like Clarke-Wright).
@@ -129,17 +129,17 @@ Unlike Solver #1 which used a hybrid approach, this solver implements a **Pure A
 *   **Concept:** The solver calculates the fitness of all 500 ants but **only** deposits pheromones for the ants that generated **Valid** solutions. Invalid solutions (e.g., truck overloaded) contribute nothing. This acts as an evolutionary filter, purifying the "collective memory" of the colony to only include feasible strategies.
 
 
-Here is the comprehensive analysis of **Solver #3** for your project defense.
+Here is the comprehensive analysis of **Solver #3** for.
 
 ### 1. High-Level Approach: "Deterministic Constructive Heuristic"
-This solver represents your **Baseline Model**. Unlike Solvers 1 and 2, it does not use AI, randomization, or iterative improvement (Metaheuristics). Instead, it uses a strict, logical pipeline to build a solution from scratch in a single pass.
+This solver represents **Baseline Model**. Unlike Solvers 1 and 2, it does not use AI, randomization, or iterative improvement (Metaheuristics). Instead, it uses a strict, logical pipeline to build a solution from scratch in a single pass.
 
 The strategy is **"Cluster-First, Route-Second"**:
 1.  **Clustering (Assignment):** First, it decides which warehouse handles which order based on inventory and proximity.
 2.  **Bin Packing (Loading):** It aggressively packs the largest trucks with the largest orders first.
 3.  **Routing (Sequencing):** It determines the delivery sequence using a Greedy Nearest Neighbor approach.
 
-**Why this is important for your defense:** This solver acts as the "Control Group." It is extremely fast (milliseconds vs. seconds) but "dumb." Your Hybrid AI (Solver 1) and ACO (Solver 2) must outperform this solver to justify their computational cost.
+**Why this is important** This solver acts as the "Control Group." It is extremely fast (milliseconds vs. seconds) but "dumb.", Hybrid AI (Solver 1) and ACO (Solver 2) must outperform this solver to justify their computational cost.
 
 ---
 
@@ -200,14 +200,14 @@ This document explains the Graphical User Interface (GUI) of your project from s
 
 ## 1. The Core Concept: What is Streamlit?
 
-Your dashboard is built using a Python library called **Streamlit**.
+the dashboard is built using a Python library called **Streamlit**.
 
 **The Analogy:**
 Imagine writing a standard Python script. Usually, you print output to a black console window. Streamlit intercepts that script. When you write `st.write("Hello")`, instead of printing to the console, it prints to a web browser.
 
 **The Execution Flow (Crucial for Defense):**
 *   **Traditional App:** You have a "Frontend" (HTML/JS) and a "Backend" (Python) that talk via API.
-*   **Streamlit (Your App):** The script runs from **Top to Bottom**. Every time you interact with a widget (click a button, drag a slider), **the entire script re-runs from line 1**.
+*   **Streamlit:** The script runs from **Top to Bottom**. Every time you interact with a widget (click a button, drag a slider), **the entire script re-runs from line 1**.
 
 ---
 
@@ -260,8 +260,8 @@ We use widgets like `st.slider`, `st.number_input`, and `st.multiselect`.
 When clicked, the following chain reaction happens:
 1.  **Config Construction:** We take all the variables from the sliders (Orders, Vehicles, Inventory) and pack them into a Python Dictionary (`config = {...}`).
 2.  **Environment Reset:** `env.reset_all_state()` wipes the previous simulation.
-3.  **Scenario Generation:** `env.generate_scenario_from_config(config)` tells the backend to build a *new* Cairo map based on your specific inputs (e.g., "Create 50 orders within 20km").
-4.  **Solver Execution:** `sol = my_custom_solver(env)` runs your algorithms (Hybrid/ACO).
+3.  **Scenario Generation:** `env.generate_scenario_from_config(config)` tells the backend to build a *new* Cairo map based on specific inputs (e.g., "Create 50 orders within 20km").
+4.  **Solver Execution:** `sol = my_custom_solver(env)` runs the algorithms (Hybrid/ACO).
 5.  **State Saving:** The result is saved to `st.session_state`.
 6.  **Rerun:** `st.rerun()` forces the page to refresh so the results appear immediately.
 
