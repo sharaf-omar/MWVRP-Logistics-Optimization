@@ -1,4 +1,15 @@
-# to run streamlit run ctrl_alt_elite_dashboard.py
+## 👥 Team: CTRL ALT ELITE
+
+**Developed by:**
+
+*   **Omar Wafa** (23-101281)
+*   **Dania Hassan** (23-101147)
+*   **Omar Shafiy** (23-201356)
+*   **Omar Sharaf** (24-101236)
+*   **Eiad Essam** (23-101108)
+*   **Youssef Sayed** (23-101227)
+*   **Habiba Elzahaby** (23-101128)
+
 Here is the comprehensive analysis of **Solver #1** for your project defense.
 
 ### 1. High-Level Approach: "Seeded Swarm Intelligence"
@@ -275,3 +286,5 @@ We don't draw them as images. We write code that *describes* the graph using the
 *   **Nodes:** `g.node('A', 'Label')` creates a box.
 *   **Edges:** `g.edge('A', 'B')` draws an arrow from A to B.
 *   **Rendering:** The library calculates the best layout automatically so the arrows don't cross messily.
+
+# to run streamlit run ctrl_alt_elite_dashboard.py
